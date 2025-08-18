@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logoImg from "../../assets/logo.png"; // transparent logo preferred
+import logoImg from "../../assets/LOGO.jpg"; // transparent logo preferred
 import { Menu, X } from "lucide-react"; // for toggle icons
 
 const Header: React.FC = () => {
