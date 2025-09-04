@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import blogTemplateImg from "../../assets/blogTemplate.jpg";
+import React, { useEffect, useState } from "react";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import decrypt from "../../Helper/helper";
+import blogTemplateImg from "../../assets/blogsBannerPage.jpg";
 
 interface Blog {
   blogContent: string;
@@ -8,63 +10,93 @@ interface Blog {
   blogImage: string;
   blogTitle: string;
   signedImageUrl?: string;
+  blogId: string;
+}
+
+interface BlogResponse {
+  success: boolean;
+  Blog?: Blog;
 }
 
 const BlogView: React.FC = () => {
+  const { blogId } = useParams<{ blogId: string }>();
   const location = useLocation();
   const navigate = useNavigate();
 
-  // ✅ Now using Blog interface directly
-  const { blog } = (location.state || {}) as { blog?: Blog };
-  console.log("blogs data",blog)
+  const [blog, setBlog] = useState<Blog | null>(location.state || null);
 
   useEffect(() => {
-    window.scrollTo(0, 0); // ⬅️ scroll to top on page load
-  }, []);
+
+     // ✅ Always scroll to top when BlogView mounts
+  window.scrollTo(0, 0);
+    // ✅ If no state (direct URL visit), fetch from API
+    if (!blog && blogId) {
+      axios
+        .post(
+          `${import.meta.env.VITE_API_URL}/UserRoutes/getBlogById`,
+          { blogId },
+          { headers: { "Content-Type": "application/json" } }
+        )
+        .then((response) => {
+          const data = decrypt<BlogResponse>(
+            response.data[1],
+            response.data[0],
+            import.meta.env.VITE_ENCRYPTION_KEY
+          );
+          if (data.success && data.Blog) {
+            setBlog(data.Blog);
+          }
+        })
+        .catch((err) => console.error("Error fetching blog:", err));
+    }
+  }, [blog, blogId]);
 
   if (!blog) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-gray-600 text-lg">
-        No Blog Found
+      <div className="min-h-screen flex items-center justify-center text-gray-600">
+        Loading blog...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8 mt-20">
-      <div className="max-w-4xl mx-auto  rounded-xl p-8">
+    <div className="min-h-screen bg-gray-100 p-6 mt-20 flex flex-col items-center">
+      <div className="max-w-4xl w-full bg-white shadow-lg rounded-xl p-8">
+        <img
+          src={blog.signedImageUrl || blogTemplateImg}
+          alt={blog.blogTitle}
+          className="w-full max-h-[400px] object-cover rounded-lg mb-6"
+          // className="rounded-lg max-h-[250px] object-cover mb-4"
+        />
 
-    
+        {/* <h1 className="text-3xl font-bold text-slate-900 mb-4">
+          {blog.blogTitle}
+        </h1> */}
 
-        {/* Title + Date */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">{blog.blogTitle}</h1>
-          <p className="text-gray-600 text-sm mt-2 sm:mt-0">{blog.blogDate}</p>
+        <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-semibold mb-2 text-slate-900">
+                {blog.blogTitle}
+              </h2>
+        
+
+        <p className="text-sm text-gray-500 mb-6">
+          {new Date(blog.blogDate).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </p>
         </div>
 
-        {/* Image */}
-        <div className="mb-6">
-          <img
-            src={blog.signedImageUrl || blogTemplateImg}
-            alt={blog.blogTitle}
-            className="rounded-lg max-h-[400px] object-cover w-full"
-          />
-        </div>
-
-        {/* Content */}
         <div
-          className="prose max-w-none text-justify"
+          className="prose max-w-none text-gray-800"
           dangerouslySetInnerHTML={{ __html: blog.blogContent }}
-        ></div>
+        />
 
-        {/* Back button */}
-        <div className="mt-8 text-center">
+        <div className="text-center mt-8">
           <button
-            onClick={() => {
-              navigate(-1);
-              window.scrollTo(0, 0);
-            }}
-            className="bg-[#2d1487] text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300"
+            onClick={() => navigate(-1)}
+            className="bg-[#2d1487] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition"
           >
             Back to Blogs
           </button>

@@ -1,0 +1,58 @@
+import React, { useState } from "react";
+import AdminFeedback from "./AdminFeedback";
+import ListFeedback from "./ListFeedback";
+
+const Feedback: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="">
+      <section id="feedback" className="scroll-mt-50">
+        <div className="px-6 py-30 bg-blue-50 ">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-slate-900">
+            Feedback
+          </h2>
+
+          {/* ✅ List of Reviews */}
+          <ListFeedback />
+
+          {/* ✅ Share Feedback Button */}
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="px-6 py-3 bg-[#0A1B3F] text-white rounded-md hover:bg-[#E63946] transition"
+            >
+              Share Your Feedback
+            </button>
+          </div>
+
+          {/* ✅ Popup Modal with AdminFeedback */}
+          {isOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+              <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-5 relative">
+                {/* Close Button */}
+                <button
+                  className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl"
+                  onClick={() => setIsOpen(false)}
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+
+                {/* Feedback Form */}
+                <div className="max-h-[75vh] overflow-y-auto pr-1">
+                  <AdminFeedback />
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Feedback;
+
+
+
