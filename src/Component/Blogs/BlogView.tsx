@@ -66,12 +66,9 @@ const BlogView: React.FC = () => {
           src={blog.signedImageUrl || blogTemplateImg}
           alt={blog.blogTitle}
           className="w-full max-h-[400px] object-cover rounded-lg mb-6"
-          // className="rounded-lg max-h-[250px] object-cover mb-4"
+          
         />
-
-        {/* <h1 className="text-3xl font-bold text-slate-900 mb-4">
-          {blog.blogTitle}
-        </h1> */}
+        
 
         <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-semibold mb-2 text-slate-900">

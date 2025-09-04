@@ -40,7 +40,7 @@ const Feedback: React.FC = () => {
                 </button>
 
                 {/* Feedback Form */}
-                <div className="max-h-[75vh] overflow-y-auto pr-1">
+                <div className="max-h-[80vh] pr-1">
                   <AdminFeedback />
                 </div>
               </div>
