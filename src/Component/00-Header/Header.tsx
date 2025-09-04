@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logoImg from "../../assets/logo.png";
+import logoImg from "../../assets/logo1.png";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
