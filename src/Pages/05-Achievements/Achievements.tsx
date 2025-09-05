@@ -69,8 +69,8 @@ const Achievements: React.FC = () => {
       <div className="absolute inset-0 bg-black/40"></div>
 
       <div className="relative max-w-6xl mx-auto text-center mb-12 text-white">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">Achievements</h2>
-        <p className="text-lg max-w-3xl mx-auto mb-10">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{fontFamily:"DM Sans"}}>Achievements</h2>
+        <p className="text-lg max-w-3xl mx-auto mb-10" style={{fontFamily:"DM Sans"}}>
           Celebrating milestones and successes of ZadBy Cricket Club and its
           members.
         </p>
@@ -110,14 +110,14 @@ const Achievements: React.FC = () => {
           >
             <div className="flex justify-between items-center mb-3">
               <h3
-                className="font-semibold text-lg truncate"
+                className="font-semibold text-lg truncate" style={{fontFamily:"DM Sans"}}
                 title={achievement.achievementTitle}
               >
                 {achievement.achievementTitle}
               </h3>
-              <p className="text-sm text-gray-500">{achievement.achievedOn}</p>
+              <p className="text-sm text-gray-500" style={{fontFamily:"DM Sans"}}>{achievement.achievedOn}</p>
             </div>
-            <p className="text-gray-600 text-sm line-clamp-3">
+            <p className="text-gray-600 text-sm line-clamp-3" style={{fontFamily:"DM Sans"}}>
               {stripHtmlTags(achievement.achievementDescription).length > 100
                 ? `${stripHtmlTags(
                     achievement.achievementDescription
@@ -139,7 +139,7 @@ const Achievements: React.FC = () => {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate("/achievements-all")}
-          className="bg-[#0A1B3F] hover:bg-[#E63946] text-white px-6 py-3 rounded-full font-semibold transition"
+          className="bg-[#fdbe1b] hover:bg-[#E63946] text-white px-6 py-3 rounded-full font-semibold transition"
         >
           View All Achievements
         </motion.button>

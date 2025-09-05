@@ -10,12 +10,12 @@ const Footer: React.FC = () => {
 
         {/* About Section */}
         <div>
-          <h3 className="text-xl font-bold text-[#d9a477] mb-4">ZadBy Cricket Club</h3>
+          <h3 className="text-xl font-bold text-[#fdbe1b] mb-4">ZadBy Cricket Club</h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-4">
             A premium sports ground in Salem, Tamil Nadu the perfect venue for cricket matches,
             tournaments, and sporting events. Book, manage, and enjoy seamless sporting experiences.
           </p>
-          <div className="flex gap-4 text-[#d9a477] text-lg">
+          <div className="flex gap-4 text-[#fdbe1b] text-lg">
             <a href="https://www.facebook.com/profile.php?id=61578385682690" aria-label="Facebook" className="hover:text-white transition">
               <i className="fab fa-facebook"></i>
             </a>

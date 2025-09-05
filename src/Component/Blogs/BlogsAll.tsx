@@ -62,10 +62,10 @@ const BlogsAll: React.FC = () => {
             />
 
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold mb-2 text-slate-900">
+              <h2 className="text-xl font-semibold mb-2 text-slate-900" style={{fontFamily:"DM Sans"}}>
                 {item.blogTitle}
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500" style={{fontFamily:"DM Sans"}}>
                 {new Date(item.blogDate).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
@@ -81,7 +81,7 @@ const BlogsAll: React.FC = () => {
                     state: item, // ✅ send full blog data
                   })
                 }
-                className="text-[#2d1487] font-medium cursor-pointer hover:underline"
+                className="text-[#fdbe1b] font-medium cursor-pointer underline" style={{fontFamily:"DM Sans"}}
               >
                 Read More
               </span>
@@ -93,9 +93,9 @@ const BlogsAll: React.FC = () => {
       <div className="text-center mt-12">
         <button
           onClick={() => navigate("/blogs")}
-          className="bg-[#2d1487] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition"
+          className="bg-[#fdbe1b] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition"
         >
-          Back to Blogs
+          Back to Home
         </button>
       </div>
     </div>

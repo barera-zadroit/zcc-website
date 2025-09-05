@@ -34,7 +34,7 @@
   useEffect(() => {
   const interval = setInterval(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  }, 7000); // ⬅️ 7 seconds per slide
+  }, 2000); // ⬅️ 7 seconds per slide
   return () => clearInterval(interval);
 }, [images.length]);
 
@@ -136,7 +136,7 @@
 
     return (
       // <div className="text-[#102A43]">
-      <div className="text-[#102A43] overflow-x-hidden">
+      <div className="text-[#090a58] overflow-x-hidden">
 
       {/* HERO */}
 <section
@@ -164,17 +164,17 @@
   </div>
 
   <div className="relative z-10 w-full max-w-6xl px-6 py-28 md:py-36 lg:py-44">
-    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-md">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-md" style={{fontFamily:"DM Sans"}}>
       ZadBy Cricket Club
     </h1>
-    <p className="mt-4 text-sm sm:text-base md:text-lg text-white/90 max-w-3xl mx-auto">
+    <p className="mt-4 text-sm sm:text-base lg:text-xl lg:mt-2 md:text-lg text-white/90 max-w-3xl mx-auto"style={{fontFamily:"DM Sans"}} >
       Book your ground and enjoy playing the game
     </p>
 
     <div className="mt-8 flex items-center justify-center gap-4">
       <Link
         to="/contact"
-        className="inline-block bg-[#0A1B3F] hover:bg-[#a91632] text-white font-semibold px-6 py-3 rounded-md shadow-lg transition"
+        className="inline-block bg-[#fdbe1b] hover:bg-[#a91632] text-white font-semibold px-6 py-3 rounded-md shadow-lg transition"
         aria-label="Book Ground Now"
       >
         Book Now
@@ -221,8 +221,8 @@
         }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">About Us</h2>
-        <p className="text-lg text-slate-700 mb-6 leading-relaxed text-justify">
+        <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4" style={{fontFamily:"DM Sans"}}>About Us</h2>
+        <p className="text-lg text-slate-700 mb-6 leading-relaxed text-justify" style={{fontFamily:"DM Sans"}}>
           Zadby Cricket Club (ZCC) has been established to support players, academies, schools, and sports
           organizers by offering a professional and reliable sports environment.
           All ground bookings and tournament arrangements are efficiently managed through the ZadSports App,
@@ -234,17 +234,17 @@
 
         <div className="mt-6 flex flex-wrap gap-6">
           <div className="min-w-[140px]">
-            <div className="text-2xl font-extrabold text-slate-900 text-justify">500+</div>
-            <div className="text-sm text-slate-600">Matches Hosted</div>
+            <div className="text-2xl font-extrabold text-[#fdbe1b] text-justify">500+</div>
+            <div className="text-sm text-slate-600 " style={{fontFamily:"DM Sans"}}>Matches Hosted</div>
           </div>
 
           <div className="min-w-[140px]">
-            <div className="text-2xl font-extrabold text-slate-900 text-justify">50+</div>
-            <div className="text-sm text-slate-600">Team Accommodation</div>
+            <div className="text-2xl font-extrabold text-[#fdbe1b] text-justify">50+</div>
+            <div className="text-sm text-slate-600" style={{fontFamily:"DM Sans"}}>Team Accommodation</div>
           </div>
 
           <div className="min-w-[140px]">
-            <div className="text-2xl font-extrabold text-slate-900 text-justify">Food</div>
+            <div className="text-2xl font-extrabold text-[#fdbe1b] text-justify">Food</div>
             <div className="text-sm text-slate-600">Catered (₹500 / person / day)</div>
           </div>
         </div>
@@ -284,8 +284,8 @@
   transition={{ staggerChildren: 0.3 }}
 >
   <div className="max-w-7xl mx-auto text-center mb-12">
-    <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">Our Services</h2>
-    <p className="text-lg text-gray-600">
+    <h2 className="text-3xl sm:text-4xl font-bold  mb-4 text-[#fdbe1b]" style={{fontFamily:"DM Sans"}}>Our Services</h2>
+    <p className="text-lg text-gray-600" style={{fontFamily:"DM Sans"}}>
       We provide complete cricket ground facilities for players, teams, and corporate tournaments.
     </p>
   </div>
@@ -308,8 +308,8 @@
         className="w-full h-48 object-cover"
       />
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-blue-800">Ground Booking</h3>
-        <p className="text-gray-700 text-sm">
+        <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b] " style={{fontFamily:"DM Sans"}}>Ground Booking</h3>
+        <p className="text-gray-700 text-sm" style={{fontFamily:"DM Sans"}}>
           Available for matches, practice sessions, and multi-day tournaments.
           Open to academies, schools, clubs, and corporate teams.
           All bookings are managed digitally via the ZadSports App.
@@ -334,8 +334,8 @@
         className="w-full h-48 object-cover"
       />
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-blue-800">Team Accommodation</h3>
-        <p className="text-gray-700 text-sm">
+        <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b]" style={{fontFamily:"DM Sans"}}>Team Accommodation</h3>
+        <p className="text-gray-700 text-sm" style={{fontFamily:"DM Sans"}}>
           Free accommodation is provided for teams participating in multi-day tournaments,
           ensuring a comfortable stay during the event.
         </p>
@@ -359,8 +359,8 @@
         className="w-full h-48 object-cover"
       />
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-blue-800">Food Facilities</h3>
-        <p className="text-gray-700 text-sm">
+        <h3 className="text-xl font-semibold mb-2 text-[#fdbe1b]" style={{fontFamily:"DM Sans"}}>Food Facilities</h3>
+        <p className="text-gray-700 text-sm" style={{fontFamily:"DM Sans"}} >
           Meals at ₹500 per person/day including Breakfast, Lunch,
           Evening Snacks, and Dinner. Prepared hygienically with nutrition in mind.
         </p>
@@ -399,8 +399,8 @@
   <div className="absolute inset-0 bg-black/30"></div>
 
   {/* 🔹 Content */}
-  <div className="relative z-10 max-w-6xl mx-auto">
-    <h2 className="text-2xl font-semibold text-center mb-6 text-[#090a58]">
+  <div className="relative z-10 max-w-6xl mx-auto" >
+    <h2 className="text-2xl font-semibold text-center mb-6 text-[#090a58]" style={{fontFamily:"DM Sans"}}>
       Contact Us
     </h2>
 
@@ -431,7 +431,7 @@
         {/* Inputs */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="name" className="block mb-1 text-sm font-medium text-gray-700">
+            <label htmlFor="name" className="block mb-1 text-sm font-medium text-gray-700" style={{fontFamily:"DM Sans"}}>
               Name *
             </label>
             <input
@@ -446,7 +446,7 @@
           </div>
 
           <div>
-            <label htmlFor="phone" className="block mb-1 text-sm font-medium text-gray-700">
+            <label htmlFor="phone" className="block mb-1 text-sm font-medium text-gray-700" style={{fontFamily:"DM Sans"}}>
               Phone
             </label>
             <input
@@ -463,7 +463,7 @@
           </div>
 
           <div>
-            <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block mb-1 text-sm font-medium text-gray-700" style={{fontFamily:"DM Sans"}}>
               Email *
             </label>
             <input
@@ -478,7 +478,7 @@
           </div>
 
           <div>
-            <label htmlFor="subject" className="block mb-1 text-sm font-medium text-gray-700">
+            <label htmlFor="subject" className="block mb-1 text-sm font-medium text-gray-700" style={{fontFamily:"DM Sans"}}>
               Subject *
             </label>
             <input
@@ -495,7 +495,7 @@
 
         {/* Textarea */}
         <div className="mt-3 flex-1">
-          <label htmlFor="message" className="block mb-1 text-sm font-medium text-gray-700">
+          <label htmlFor="message" className="block mb-1 text-sm font-medium text-gray-700" style={{fontFamily:"DM Sans"}}>
             Message *
           </label>
           <textarea
@@ -515,7 +515,7 @@
             type="submit"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#090a58] hover:bg-[#a91632] text-white px-6 py-2 rounded-md text-sm font-semibold transition duration-300"
+            className="bg-[#fdbe1b] hover:bg-[#a91632] text-white px-6 py-2 rounded-md text-sm font-semibold transition duration-300" style={{fontFamily:"DM Sans"}}
           >
             Send Message
           </motion.button>

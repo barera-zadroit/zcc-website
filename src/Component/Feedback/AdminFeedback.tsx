@@ -69,13 +69,13 @@ const AdminFeedback: React.FC = () => {
 
   return (
     <div className="bg-white rounded-lg p-4 w-full">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4 border-l-4 border-[#090a58] pl-3">
+      <h2 className="text-lg font-semibold text-gray-800 mb-4 border-l-4 border-[#090a58] pl-3" style={{fontFamily:"DM Sans"}}>
         Tell us what you think
       </h2>
 
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium">
+          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
             Name
           </label>
           <input
@@ -88,7 +88,7 @@ const AdminFeedback: React.FC = () => {
         </div>
 
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium">
+          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
             Email
           </label>
           <input
@@ -101,7 +101,7 @@ const AdminFeedback: React.FC = () => {
         </div>
 
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium">
+          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
             Your Rating
           </label>
           <div className="flex space-x-1">
@@ -119,7 +119,7 @@ const AdminFeedback: React.FC = () => {
         </div>
 
         <div>
-          <label className="block mb-1 text-gray-700 text-sm font-medium">
+          <label className="block mb-1 text-gray-700 text-sm font-medium" style={{fontFamily:"DM Sans"}}>
             Message
           </label>
           <textarea
@@ -141,7 +141,7 @@ const AdminFeedback: React.FC = () => {
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#090a58] hover:bg-[#E63946] text-white px-4 py-2 rounded-md font-medium transition disabled:opacity-50 text-sm"
+          className="bg-[#fdbe1b] hover:bg-[#E63946] text-white px-4 py-2 rounded-md font-medium transition disabled:opacity-50 text-sm" style={{fontFamily:"DM Sans"}}
         >
           {loading ? "Sending..." : "Send Feedback"}
         </button>

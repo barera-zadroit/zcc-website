@@ -9,7 +9,7 @@ const Feedback: React.FC = () => {
     <div className="">
       <section id="feedback" className="scroll-mt-50">
         <div className="px-6 py-30 bg-blue-50 ">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-slate-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-[#fdbe1b]" style={{fontFamily:"DM Sans"}}>
             Feedback
           </h2>
 
@@ -20,7 +20,7 @@ const Feedback: React.FC = () => {
           <div className="flex justify-center mt-10">
             <button
               onClick={() => setIsOpen(true)}
-              className="px-6 py-3 bg-[#0A1B3F] text-white rounded-md hover:bg-[#E63946] transition"
+              className="px-6 py-3 bg-[#fdbe1b] text-white rounded-md hover:bg-[#E63946] transition" style={{fontFamily:"DM Sans"}}
             >
               Share Your Feedback
             </button>

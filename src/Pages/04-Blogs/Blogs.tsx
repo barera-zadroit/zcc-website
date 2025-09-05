@@ -52,10 +52,10 @@ const BlogsPreview: React.FC = () => {
   return (
     <section className="bg-white py-16 px-6">
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 mb-4" style={{fontFamily:"DM Sans"}}>
           Latest Blogs
         </h2>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-700 max-w-2xl mx-auto" style={{fontFamily:"DM Sans"}}>
           Stay updated with news, match highlights, and stories from ZadBy
           Cricket Club.
         </p>
@@ -92,10 +92,10 @@ const BlogsPreview: React.FC = () => {
               className="w-full h-48 object-cover rounded mb-4"
             />
             <div className="flex flex-row w-full justify-between">
-              <h2 className="text-xl font-semibold mb-2 text-slate-900">
+              <h2 className="text-xl font-semibold mb-2 text-slate-900" style={{fontFamily:"DM Sans"}}>
                 {blog.blogTitle}
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500" style={{fontFamily:"DM Sans"}}>
                 {new Date(blog.blogDate).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
@@ -113,7 +113,7 @@ const BlogsPreview: React.FC = () => {
                     { state: blog }
                   )
                 }
-                className="text-[#2d1487] font-medium cursor-pointer hover:underline"
+                className="text-[#fdbe1b] font-medium cursor-pointer underline" style={{fontFamily:"DM Sans"}}
               >
                 Read More
               </span>
@@ -133,7 +133,7 @@ const BlogsPreview: React.FC = () => {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate("/blogs-all")}
-          className="bg-[#0A1B3F] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition"
+          className="bg-[#fdbe1b] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition"
         >
           View All Blogs
         </motion.button>

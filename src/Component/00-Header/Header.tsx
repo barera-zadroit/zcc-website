@@ -79,7 +79,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#18223d] text-white shadow-lg">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#18223d] text-white shadow-lg font-semibold">
       <div className="flex justify-between items-center px-8 py-4">
         {/* Logo */}
         <div className="flex items-center gap-3">

@@ -71,12 +71,12 @@ const BlogView: React.FC = () => {
         
 
         <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-semibold mb-2 text-slate-900">
+            <h2 className="text-xl font-semibold mb-2 text-slate-900" style={{fontFamily:"DM Sans"}}>
                 {blog.blogTitle}
               </h2>
         
 
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm text-gray-500 mb-6" style={{fontFamily:"DM Sans"}}>
           {new Date(blog.blogDate).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
@@ -93,7 +93,7 @@ const BlogView: React.FC = () => {
         <div className="text-center mt-8">
           <button
             onClick={() => navigate(-1)}
-            className="bg-[#2d1487] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition"
+            className="bg-[#fdbe1b] hover:bg-[#a91632] text-white px-6 py-3 rounded-full font-semibold transition" style={{fontFamily:"DM Sans"}}
           >
             Back to Blogs
           </button>

@@ -67,7 +67,7 @@ const AchievementsAll: React.FC = () => {
           >
             <div className="flex justify-between items-center mb-3">
               <h3
-                className="font-semibold text-lg truncate"
+                className="font-semibold text-lg truncate" 
                 title={achievement.achievementTitle}
               >
                 {achievement.achievementTitle}
@@ -89,9 +89,9 @@ const AchievementsAll: React.FC = () => {
       <div className="text-center mt-12">
         <button
           onClick={() => navigate("/achievements")}
-          className="bg-[#0A1B3F] hover:bg-[#E63946] text-white px-6 py-3 rounded-full font-semibold transition"
+          className="bg-[#fdbe1b] hover:bg-[#E63946] text-white px-6 py-3 rounded-full font-semibold transition"
         >
-          Back to Achievements
+          Back to Home
         </button>
       </div>
     </div>
